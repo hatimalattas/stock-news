@@ -79,13 +79,10 @@ if abs(percentage) > 0.1:
         brief = article["description"]
         message = (title, brief)
         news_list.append(message)
-    print(news_data)
-    # print(sliced_news)
 
     # STEP 3: Use twilio.com/docs/sms/quickstart/python
     # Send a separate message with each article's title and description to your phone number.
     # HINT 1: Consider using a List Comprehension.
-    # print(news_list)
     for news in news_list:
         client = Client(ACCOUNT_SID, AUTH_TOKEN)
         if percentage > 0:
@@ -96,7 +93,6 @@ if abs(percentage) > 0.1:
                 to='+966566131333'
             )
             # print(message.status)
-            # print(message.body)
 
         elif percentage < 0:
             message = client.messages \
@@ -106,7 +102,6 @@ if abs(percentage) > 0.1:
                 to='+966566131333'
             )
             # print(message.status)
-            # print(message.body)
 
 # Optional: Format the SMS message like this:
 """
